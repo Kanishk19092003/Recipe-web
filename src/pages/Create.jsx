@@ -1,13 +1,22 @@
 import { nanoid } from "nanoid";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
-
+import { RecipeContext } from "../context/RecipeContextProvider";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 const Create = () => {
-  const { register, handleSubmit } = useForm();
+  const navigate = useNavigate()
+  const {data,setData} = useContext(RecipeContext);
 
-  const SubmitHandler = (data) =>{
-    data.id = nanoid();
-    console.log(data);
-    
+  const { register, handleSubmit,reset } = useForm();
+
+  const SubmitHandler = (recipe) =>{
+    recipe.id = nanoid();
+
+    setData([...data,recipe])
+    toast.success("New Recipe Created");
+    reset();
+    navigate("/recipes")
   }
 
   return (
@@ -32,7 +41,7 @@ const Create = () => {
         className="block border-b outline-0 p-2"
         {...register("Chef")}
         type="text"
-        placeholder="Recipe title"
+        placeholder="Chef Name"
       />
 
       <textarea
