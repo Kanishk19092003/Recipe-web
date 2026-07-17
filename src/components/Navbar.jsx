@@ -9,7 +9,7 @@ const Navbar = () => {
     }`;
 
   return (
-    <nav className="flex items-center justify-center gap-6 p-4 rounded-2xl bg-gradient-to-b from-gray-800 to-gray-900 shadow-2xl border border-gray-700">
+    <nav className="flex items-center justify-center gap-6 p-4 rounded-2xl bg-linear-to-b from-gray-800 to-gray-900 shadow-2xl border border-gray-700">
       <NavLink className={activeClass} to="/">
         Home
       </NavLink>

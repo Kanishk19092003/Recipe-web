@@ -28,7 +28,7 @@ const RecipeContextProvider = (props) => {
   ],
 
   "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
-  chef : "lala bhai",
+  Chef : "lala bhai",
   "category":"Dinner",
   description: "Roll out the pizza dough and spread tomato sauce evenly."
 }]);
